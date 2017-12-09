@@ -35,14 +35,15 @@ game.newLoopFromConstructor('myGame', function () {
 		player.draw();
 		enemy.draw();
 		playerUpdates(player,spear,shield);
+		playerUpdates(enemy,spear,shield);
 
 
 		if(key.isDown('W')){
 			player.moveTo(mouse.getPosition(), 2 )
 		};
 
-		if(spear.isIntersect(enemy)){
-			enemy.radius-=1;
+		if(tip.isIntersect(enemy)){
+			alert('done');
 		};
 		
 		

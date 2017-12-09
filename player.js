@@ -29,6 +29,15 @@ var spear = game.newRectObject( {
 });
 
 
+var tip = game.newRectObject( {
+  x : 0,
+  y : 0,
+  w : 4,
+  h : 4,	
+  fillColor : "gray",
+});
+
+
 
 
 
@@ -52,8 +61,21 @@ function playerUpdates(player,spear,shield) {
 	spear.center.x = -spear.w /2;
 	spear.center.y = -player.radius /2;
 	spear.angle = player.angle;
+
+
+	tip.center.x = (-spear.w - tip.w);
+	tip.center.y = -player.radius /2;
+	tip.x = spear.x + spear.w;
+	tip.y = spear.y;
+	tip.angle = spear.angle;
+	
+
+
+
+
 	if(pjs.mouseControl.isDown('LEFT') && spear.w != spear.maxSize){
 		spear.w+=1;
+		console.log(tip.x,tip.y);
 		}
 	else if (pjs.mouseControl.isUp('LEFT') || spear.w != spear.minSize) {
 		spear.w-=1;
@@ -72,6 +94,7 @@ function playerUpdates(player,spear,shield) {
 
 	player.rotateForPoint(mouse.getPosition(), 1)
 	spear.draw();
+	tip.draw();
 	shield.draw();
 
 
