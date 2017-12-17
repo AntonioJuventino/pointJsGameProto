@@ -20,33 +20,19 @@ var mouse = pjs.mouseControl.initMouseControl();
 var width  = game.getWH().w; // width of scene viewport
 var height = game.getWH().h; // height of scene viewport
 
-pjs.system.setTitle('PointJS Game'); // Set Title for Tab or Window
+pjs.system.setTitle('Tanks'); // Set Title for Tab or Window
 
 // Game Loop
-game.newLoopFromConstructor('myGame', function () {
+game.newLoopFromConstructor('Game', function () {
 	// Constructor Game Loop
 
 
 	this.update = function () {
 		// Update function
-
 		game.clear(); // clear screen
-
-		player.draw();
-		enemy.draw();
-		playerUpdates(player,spear,shield);
-		playerUpdates(enemy,spear,shield);
-
-
-		if(key.isDown('W')){
-			player.moveTo(mouse.getPosition(), 2 )
-		};
-
-		if(tip.isIntersect(enemy)){
-			alert('done');
-		};
-		
-		
+		t.draw();
+		t.update();
+		//t.turn(-1);
 	};
 
 	this.entry = function () { // optional
@@ -59,4 +45,4 @@ game.newLoopFromConstructor('myGame', function () {
 
 });
 
-game.startLoop('myGame');
+game.startLoop('Game');

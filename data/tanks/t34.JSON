@@ -1,0 +1,19 @@
+{
+	"frame" : game.newRectObject( {
+  "x" : 100,
+  "y" : 100,
+  "w" : 50,
+  "h" : 50,
+  "fillColor" : "#FBFE6F",
+}),
+
+
+	"tower" : game.newRectObject( {
+  "x" : 100,
+  "y" : 100,
+  "w" : 50,
+  "h" : 50,
+  "fillColor" : "#FBFE6F",
+}),
+
+}
